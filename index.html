@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,13 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             background-color: #333;
             font-family: 'Arial', sans-serif;
+            color: #fff;
         }
 
         .countdown {
@@ -23,7 +26,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
         }
 
         .countdown h1 {
@@ -35,25 +37,65 @@
         .countdown .timer {
             font-size: 5rem;
         }
+
+        .result {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 2px solid #ffcc00;
+            border-radius: 10px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .result h2 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .result h6 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .result p {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .divider {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ffcc00;
+        }
     </style>
 </head>
+
 <body>
     <div class="countdown">
         <h1>Mundial Roscón de Reyes 2024</h1>
         <h1 id="timer" class="timer"></h1>
-        <h2>¡¡¡Reserva tu fecha para ver cómo vuelve a perder JR!!!</h2>
-        <h2>Lunes 1 de enero de 2024 a las 17:00 (16:00 en Canarias)</h2>
+        <h2>Tras la primera batalla épica... ¡viene la segunda!</h2>
+        <h2>Miércoles 2 de enero de 2024 a las 16:00 (15:00 en Canarias)</h2>
+    </div>
+
+    <div class="result">
+        <h2>Resultados</h2>
+        <h6>(actualizados a 02/01/2024 a las 16:32)</h6>
+        <hr class="divider">
+        <p>Nacho 1 - 0 Juan Ramón</p>
     </div>
 
     <script>
         function updateCountdown() {
-            const targetDate = new Date('2024-01-01T17:00:00Z');
+            const targetDate = new Date('2024-01-03T15:00:00Z');
             const currentDate = new Date();
 
             const timeLeft = targetDate - currentDate;
 
             if (timeLeft <= 0) {
-                document.getElementById('timer').innerHTML = '¡Feliz Año Nuevo!';
+                document.getElementById('timer').innerHTML = 'La emisión comenzará en breve en el <a href="https://www.instagram.com/juanramon.campos/">Instagram del perdedor compulsivo...</a>';
             } else {
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -63,9 +105,9 @@
                 document.getElementById('timer').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
         }
-
         setInterval(updateCountdown, 1000);
-        updateCountdown();
+        updateCountdown(); 
     </script>
 </body>
+
 </html>
