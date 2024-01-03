@@ -69,27 +69,50 @@
             margin-bottom: 15px;
             border: 1px solid #ffcc00;
         }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .result-rotate {
+            display: inline-block;
+            animation: rotate 3s linear infinite;
+            font-size: 2rem;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .layout {
+            padding: 2rem;
+        }
     </style>
 </head>
 
-<body>
+<body class="layout">
     <div class="countdown">
-        <h1>Mundial Roscón de Reyes 2024</h1>
+        <br>
+        <h2>Mundial Roscón de Reyes 2024</h2>
         <h1 id="timer" class="timer"></h1>
-        <h2>Tras la primera batalla épica... ¡viene la segunda!</h2>
-        <h2>Miércoles 2 de enero de 2024 a las 16:00 (15:00 en Canarias)</h2>
+        <h3>Las cosas empeoran para el defensor del título...</h3>
+        <h2>¡¡¡NUNCA ANTES SE REMONTÓ UN 2 - 0!!!</h2>
+        <h2>Jueves 4 de enero de 2024 a las 19:00 (18:00 en Canarias)</h2>
     </div>
 
     <div class="result">
         <h2>Resultados</h2>
         <h6>(actualizados a 02/01/2024 a las 16:32)</h6>
         <hr class="divider">
-        <p>Nacho 1 - 0 Juan Ramón</p>
+        <p>Nacho <b><span class="result-rotate">2</span></b> - 0 Juan Ramón</p>
     </div>
 
     <script>
         function updateCountdown() {
-            const targetDate = new Date('2024-01-03T15:00:00Z');
+            const targetDate = new Date('2024-01-04T18:00:00Z');
             const currentDate = new Date();
 
             const timeLeft = targetDate - currentDate;
